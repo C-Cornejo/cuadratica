@@ -44,16 +44,19 @@ export default function App(){
         reset();
         let test = Math.pow(b,2) - (4* (a*c));
         // setX1(test);
-        if (test >= 0)
+        if (test >= 0 && a != 0)
         {
             let r1 = ((b * (-1)) + Math.sqrt(test))/(2*a);
             let r2 = ((b * (-1)) - Math.sqrt(test))/(2*a);
             setX1((r1).toFixed(3));
             setX2((r2).toFixed(3));
-            setErrorMessage("Las dos raices respuestas son iguales")
+        }
+        else if(a == 0)
+        {
+            setErrorMessage("El valor de la constante A no puede ser cero");
         }else
         {
-          setErrorMessage("Esta ecuacion no tiene soluciones reales");
+          setErrorMessage("Esta ecuación no tiene soluciones reales");
         }
       }//metodo calculate
 
